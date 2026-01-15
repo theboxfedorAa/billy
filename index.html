@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Billy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        background: black;
+        color: #00ffea;
+        font-family: 'Press Start 2P', cursive;
+        overflow: hidden;
+    }
+
+    #explosion {
+        position: fixed;
+        inset: 0;
+        background: url("explosion.jpg") center/contain no-repeat;
+        animation: explode 1.4s ease-out forwards;
+        z-index: 10;
+    }
+
+    @keyframes explode {
+        0% {
+            transform: scale(0.4);
+            opacity: 1;
+        }
+        70% {
+            transform: scale(1.6);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(2.2);
+            opacity: 0;
+        }
+    }
+
+    #main {
+        display: none;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    a {
+        margin-top: 30px;
+        padding: 16px 32px;
+        text-decoration: none;
+        color: white;
+        background: #ff007f;
+        border: 3px solid #00ffea;
+        animation: glow 1.4s infinite alternate;
+    }
+
+    @keyframes glow {
+        from { box-shadow: 0 0 10px #00ffea; }
+        to { box-shadow: 0 0 30px #ff00ff; }
+    }
+</style>
+</head>
+
+<body>
+
+<div id="explosion"></div>
+
+<div id="main">
+    <h1>BILLY</h1>
+    <p>ENTER</p>
+    <a href="https://www.tiktok.com/@skate_board155" target="_blank">
+        TikTok
+    </a>
+</div>
+
+<script>
+    setTimeout(() => {
+        document.getElementById("explosion").remove();
+        document.getElementById("main").style.display = "flex";
+    }, 1400);
+</script>
+
+</body>
+</html>
